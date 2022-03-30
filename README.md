@@ -2,7 +2,7 @@
 my solutions
 
 ---
-+ **Multiples of 3 or 5**
++ [**Multiples of 3 or 5**](https://www.codewars.com/kata/514b92a657cdc65150000006/train/javascript)
 ```javascript
 function solution(number) {
   let sum = 0;
@@ -14,7 +14,7 @@ function solution(number) {
 }
 ```
 ---
-+ **Pair of gloves**
++ [**Pair of gloves**](https://www.codewars.com/kata/58235a167a8cb37e1a0000db/train/javascript)
 ```javascript
 function numberOfPairs(gloves) {
     let count = 0;
@@ -29,7 +29,7 @@ function numberOfPairs(gloves) {
 }
 ```
 ---
-+ **Isograms**
++ [**Isograms**](https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript)
 ```javascript
 function isIsogram(str){
   str = str.toLowerCase();
