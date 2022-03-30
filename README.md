@@ -57,3 +57,15 @@ function explode(s) {
 }
 ```
 ---
++ [**Handshake problem**](https://www.codewars.com/kata/5574835e3e404a0bed00001b/train/javascript)
+```javascript
+function getParticipants(handshakes){
+  let sum=0;
+  let i=1;
+  while (sum < handshakes) {
+    sum += i++;
+    }
+  return i;
+}
+```
+---
