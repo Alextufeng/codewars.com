@@ -17,23 +17,31 @@ function solution(number) {
 + **Pair of gloves**
 ```javascript
 function numberOfPairs(gloves) {
-  //My hands are freezing
-  let result = 0;
-  let i = 0;
-  while (i < gloves.length-1) {
-  let j= i+1;
-  while (j < gloves.length){
-    if (gloves[i] === gloves[j]) {
-      result += 1;
-      } else {
-      result += 0;
-      }
-    j++;
-  }
-  i++;
-  }
-  return result;
+    let count = 0;
+    let arr = [].concat(...gloves);
+    for (let i = 0; i < arr.sort().length - 1; i++) {
+        if (arr[i] === arr[i + 1]) {
+            count += 1;
+            i++;
+        }
+    }
+    return count;
 }
 ```
 ---
-+ **Array Deep Count**
++ **Isograms**
+```javascript
+function isIsogram(str){
+  str = str.toLowerCase();
+  for(let i = 0; i < str.length; ++i){
+    for(let j = i+1; j < str.length; ++j){
+      if(str[i]===str[j]) return false; 
+    }
+  }
+   return true;
+}
+```
+---
+
+
+
