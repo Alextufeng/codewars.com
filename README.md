@@ -42,6 +42,18 @@ function isIsogram(str){
 }
 ```
 ---
-
-
-
++ [**Digits explosion**](https://www.codewars.com/kata/585b1fafe08bae9988000314/train/javascript)
+```javascript
+function explode(s) {
+  let str = '';
+  for (let i = 0; i < s.length; i++){
+    let j = 1;
+    while (j <= s[i]) {
+      str += s[i];
+      j++;
+    }
+  }
+  return str;
+}
+```
+---
