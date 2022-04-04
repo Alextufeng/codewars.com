@@ -121,3 +121,59 @@ function deepCount(a) {
 }
 ```
 ---
++ [**Length of missing array**](https://www.codewars.com/kata/57b6f5aadb5b3d0ae3000611/train/javascript)
+```javascript
+function getLengthOfMissingArray(arrayOfArrays) {
+  let min = 0;
+  let max = 0;
+  let result = 0;
+
+  if (!arrayOfArrays || arrayOfArrays.length === 0 || arrayOfArrays.includes(null)) {
+    return 0;
+  }
+
+  arrayOfArrays = arrayOfArrays.map(arr => arr = arr.length);
+  min = Math.min(...arrayOfArrays);
+  max = Math.max(...arrayOfArrays);
+
+  for (let i = min; i <= max; i++) {
+    if (!arrayOfArrays.includes(i)) {
+      result = i;
+    }
+  }
+
+  if (arrayOfArrays.includes(0)) {
+    result = 0;
+  }
+
+  return result;
+}
+```
+---
++ [**The Coupon Code**](https://www.codewars.com/kata/539de388a540db7fec000642/train/javascript)
+```javascript
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  let current_date = Date.parse(currentDate);
+  let expiration_date = Date.parse(expirationDate);
+  if( (enteredCode === correctCode) && (expiration_date >= current_date) ){
+    return true;
+    }
+    else {
+      return false;
+    }
+}
+```
+---
++ [**Unlucky Days**](https://www.codewars.com/kata/56eb0be52caf798c630013c0/train/javascript)
+```javascript
+function unluckyDays(year) {
+  let count = 0;
+  for(let i = 0; i < 12; i++) {
+    if(new Date(year, i, 13).getDay() === 5) {
+      count++;
+    }
+  }  
+  return count;
+}
+```
+---
