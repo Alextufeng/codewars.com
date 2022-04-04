@@ -84,3 +84,22 @@ function nthFibo(n) {
 }
 ```
 ---
++ [**Javascript Mathematician**](https://www.codewars.com/kata/55c211cce1ef691d9b000061/train/javascript)
+```javascript
+function calculate() {
+  
+  let resOne = 0;
+  for (let i=0; i<arguments.length; i++){
+    resOne += arguments[i];
+  };
+  
+  let res = resOne;
+  return function() {
+  for (let i=0; i<arguments.length; i++){
+    res += arguments[i];
+  };
+    
+    return res;
+  };
+};
+```
