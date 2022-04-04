@@ -177,3 +177,114 @@ function unluckyDays(year) {
 }
 ```
 ---
++ [**Let's Recycle!**](https://www.codewars.com/kata/5b6db1acb118141f6b000060/train/javascript)
+```javascript
+function recycle(array) {
+  let materials = { "paper": [], "glass": [], "organic": [], "plastic": [] }
+  array.forEach(obj => {
+    materials[obj.material].push(obj.type);
+    if(obj.secondMaterial)
+      materials[obj.secondMaterial].push(obj.type);
+  });
+  return Object.values(materials); 
+}
+```
+---
++ [**Run-length encoding**](https://www.codewars.com/kata/546dba39fa8da224e8000467/train/javascript)
+```javascript
+function runLengthEncoding(str) {
+    let arr = [],
+        counter = 1;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i + 1]) {
+            counter++;
+        } else {
+            arr.push([counter, str[i]]);
+            counter = 1;
+        }
+    }
+    return arr;
+}
+```
+---
++ [**Can you keep a secret?**](https://www.codewars.com/kata/5351b35ebaeb67f9110012d2/train/javascript)
+```javascript
+function createSecretHolder(secret) {
+  let secr = secret;
+  function setSecret(n) {
+    secret = n;
+  };
+  function getSecret() {
+    return secret;
+  };
+  let obj = {
+    setSecret: setSecret,
+    getSecret: getSecret
+  };
+  return obj;
+};
+```
+---
++ [**Closures and Scopes**](https://www.codewars.com/kata/526ec46d6f5e255e150002d1)
+```javascript
+function createFunctions(n) {
+  let callbacks = [];
+
+  for (let i=0; i<n; i++) {
+    callbacks.push(function() {
+      return i;
+    });
+  }
+  return callbacks;
+}
+```
+---
++ [**Sorting by bits**](https://www.codewars.com/kata/59fa8e2646d8433ee200003f/train/javascript)
+```javascript
+function sortByBit(arr) {
+  function countUnits(binaryNum){
+  let arr=binaryNum.toString(2).split("");
+  let sum=0;
+  arr.map(el=>sum+=+el);
+  return sum;
+}
+  arr.sort((a,b)=>{
+let res=countUnits(a)-countUnits(b);
+if(res<0) return -1;
+else if(res===0) return a-b;
+else return 1;
+  })
+ return arr;
+}
+```
+---
++ [Nuclear Missile Manager](https://www.codewars.com/kata/567ed5db4089538eea000010/train/javascript)
+```javascript
+function launchAll(launchMissile) {
+  for(let i = 0; i < 5; i++) {
+    setTimeout(function() {
+      launchMissile(i);
+    }, i * 1000);
+  }
+}
+```
+---
++ [**Human readable duration format**](https://www.codewars.com/kata/52742f58faf5485cae000b9a/train/javascript)
+```javascript
+function formatDuration (seconds) {
+  let time = { year: 31536000, day: 86400, hour: 3600, minute: 60, second: 1 },
+      res = [];
+
+  if (seconds === 0) return 'now';
+
+  for (let key in time) {
+    if (seconds >= time[key]) {
+      let val = Math.floor(seconds/time[key]);
+      res.push(val += val > 1 ? ' ' + key + 's' : ' ' + key);
+      seconds = seconds % time[key];
+    }
+  }
+  return res.length > 1 ? res.join(', ').replace(/,([^,]*)$/,' and'+'$1') : res[0]
+}
+```
