@@ -103,3 +103,21 @@ function calculate() {
   };
 };
 ```
+---
++ [**Array Deep Count**](https://www.codewars.com/kata/596f72bbe7cd7296d1000029/train/javascript)
+```javascript
+function deepCount(a) {
+  let result = 0;
+  
+  function ifArray(arr) {
+      result = result + arr.length
+      arr.forEach(item => {
+        if (Array.isArray(item)) ifArray(item);
+      });
+    };
+  
+  ifArray(a);
+  return result;
+}
+```
+---
